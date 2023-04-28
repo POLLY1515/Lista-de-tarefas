@@ -64,6 +64,3 @@ recarregarItens()
 button.addEventListener('click',adicionarNovaTarefa)
 
 
-/*
-  
-*/
