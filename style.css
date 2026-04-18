@@ -45,18 +45,33 @@ opacity: 0.8;
 .list-tasks{
     width: 100%;
     list-style: none;
+    margin-top: 30px;
+    padding: 0;
   
 
 }
 .task{
+   background: #f2f2f2;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    min-height: 50px;
     display: flex;
-    background: #f2f2f2;
-    height: 50px;
     align-items: center;
     justify-content: space-between;
-    padding: 0 15px;
-    border-radius: 5px;
-    margin: 20px 0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.task p {
+    margin: 0 10px;
+    flex: 1;
+    word-break: break-word;
+}
+
+.task img {
+    width: 25px;
+    height: 25px;
     cursor: pointer;
 }
 
@@ -70,5 +85,8 @@ img{
 }
 .done{
     background: #8fac55;
+}
+
+.done p {
     text-decoration: line-through;
 }

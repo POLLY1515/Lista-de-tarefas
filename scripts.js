@@ -21,27 +21,43 @@ minhaListaDeItens.push({
 
 })
 input.value = ''
+input.focus()
 
   mostrarTarefas()
 
 }
 
 function mostrarTarefas() {
-     let novaLi = ''
+    let novaLi = ''
 
     minhaListaDeItens.forEach((item, posicao) => {
-
-        novaLi = novaLi +`
-    <li class="task ${item.concluida && "done"}">
-        <img src="checked.png" alt="checked na tarefa" onclick = "concluirTarefa(${posicao})">
-        <p>${item.tarefa}</p>
-        <img src="trash.png" alt="tarefa para o lixo" onclick ="deletarItem(${posicao})">
-    </li>
-
+        novaLi = novaLi + `
+        <li class="task ${item.concluida ? "done" : ""}">
+            <img src="checked.png" alt="checked na tarefa" class="btn-concluir" data-posicao="${posicao}">
+            <p>${item.tarefa}</p>
+            <img src="trash.png" alt="tarefa para o lixo" class="btn-deletar" data-posicao="${posicao}">
+        </li>
         `
     })
 
     listaCompleta.innerHTML = novaLi;
+
+    const botoesConcluir = document.querySelectorAll('.btn-concluir')
+    const botoesDeletar = document.querySelectorAll('.btn-deletar')
+
+    botoesConcluir.forEach((botao) => {
+        botao.addEventListener('click', function() {
+            const posicao = Number(botao.dataset.posicao)
+            concluirTarefa(posicao)
+        })
+    })
+
+    botoesDeletar.forEach((botao) => {
+        botao.addEventListener('click', function() {
+            const posicao = Number(botao.dataset.posicao)
+            deletarItem(posicao)
+        })
+    })
 
     localStorage.setItem('lista', JSON.stringify(minhaListaDeItens))
 }
@@ -71,6 +87,12 @@ function recarregarItens(){
 }
 
 recarregarItens()
-button.addEventListener('click',adicionarNovaTarefa)
+button.addEventListener('click', adicionarNovaTarefa)
+
+input.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        adicionarNovaTarefa()
+    }
+})
 
 
