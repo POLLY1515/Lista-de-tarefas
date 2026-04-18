@@ -90,3 +90,11 @@ img{
 .done p {
     text-decoration: line-through;
 }
+
+.empty-message {
+    text-align: center;
+    color: #666;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}

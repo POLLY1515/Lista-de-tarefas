@@ -1,10 +1,17 @@
 const button = document.querySelector('.button-add-task')
 const input = document.querySelector('.input-task')
 const listaCompleta = document.querySelector('.list-tasks')
+const mensagemVazia = document.querySelector('.empty-message')
 
 let minhaListaDeItens = [];
 
-
+function controlarMensagemVazia() {
+    if (minhaListaDeItens.length === 0) {
+        mensagemVazia.style.display = 'block'
+    } else {
+        mensagemVazia.style.display = 'none'
+    }
+}
 
 function adicionarNovaTarefa(){
 
@@ -58,6 +65,9 @@ function mostrarTarefas() {
             deletarItem(posicao)
         })
     })
+
+            controlarMensagemVazia()
+
 
     localStorage.setItem('lista', JSON.stringify(minhaListaDeItens))
 }
