@@ -4,9 +4,19 @@ const listaCompleta = document.querySelector('.list-tasks')
 
 let minhaListaDeItens = [];
 
+
+
 function adicionarNovaTarefa(){
+
+    const textoDaTarefa = input.value.trim();
+
+    if(textoDaTarefa === ""){
+        alert("Digite uma tarefa antes de adicionar");
+        return;
+    }
+
 minhaListaDeItens.push({
-   tarefa: input.value,
+   tarefa: textoDaTarefa,
    concluida: false
 
 })
