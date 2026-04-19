@@ -2,6 +2,7 @@ const button = document.querySelector('.button-add-task')
 const input = document.querySelector('.input-task')
 const listaCompleta = document.querySelector('.list-tasks')
 const mensagemVazia = document.querySelector('.empty-message')
+const contador = document.getElementById('task-count')
 
 let minhaListaDeItens = [];
 
@@ -11,6 +12,10 @@ function controlarMensagemVazia() {
     } else {
         mensagemVazia.style.display = 'none'
     }
+}
+
+function atualizarContador() {
+    contador.textContent = minhaListaDeItens.length
 }
 
 function adicionarNovaTarefa(){
@@ -67,6 +72,7 @@ function mostrarTarefas() {
     })
 
             controlarMensagemVazia()
+            atualizarContador()
 
 
     localStorage.setItem('lista', JSON.stringify(minhaListaDeItens))
