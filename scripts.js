@@ -44,11 +44,15 @@ function mostrarTarefas() {
 
     minhaListaDeItens.forEach((item, posicao) => {
         novaLi = novaLi + `
-        <li class="task ${item.concluida ? "done" : ""}">
-            <img src="checked.png" alt="checked na tarefa" class="btn-concluir" data-posicao="${posicao}">
-            <p>${item.tarefa}</p>
-            <img src="trash.png" alt="tarefa para o lixo" class="btn-deletar" data-posicao="${posicao}">
-        </li>
+       <li class="task ${item.concluida ? "done" : ""}">
+    <button class="btn-concluir" data-posicao="${posicao}" aria-label="Concluir tarefa">
+        <img src="checked.png" alt="">
+    </button>
+    <p>${item.tarefa}</p>
+    <button class="btn-deletar" data-posicao="${posicao}" aria-label="Excluir tarefa">
+        <img src="trash.png" alt="">
+    </button>
+</li>
         `
     })
 

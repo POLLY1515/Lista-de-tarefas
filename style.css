@@ -72,7 +72,6 @@ opacity: 0.8;
 .task img {
     width: 25px;
     height: 25px;
-    cursor: pointer;
 }
 
 img{
@@ -106,4 +105,21 @@ img{
     margin-bottom: 10px;
     font-size: 15px;
     font-weight: 500;
+}
+
+.btn-concluir,
+.btn-deletar {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.btn-concluir img,
+.btn-deletar img {
+    width: 25px;
+    height: 25px;
 }
