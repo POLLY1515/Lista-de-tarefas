@@ -14,6 +14,12 @@
     <div class="container">
         <input class="input-task" type="text" placeholder="o que tenho que fazer...">
         <button class="button-add-task">Adicionar</button>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active-filter" data-filtro="todas">Todas</button>
+            <button class="filter-btn" data-filtro="pendentes">Pendentes</button>
+            <button class="filter-btn" data-filtro="concluidas">Concluídas</button>
+        </div>
         <p class="task-counter">Total de tarefas: <span id="task-count">0</span></p>
         <p class="empty-message">Nenhuma tarefa adicionada ainda.</p>
         <ul class="list-tasks"></ul>

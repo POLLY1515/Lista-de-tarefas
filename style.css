@@ -123,3 +123,31 @@ img{
     width: 25px;
     height: 25px;
 }
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    border: none;
+    background: #d9d9d9;
+    color: #222;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    opacity: 0.9;
+}
+
+.active-filter {
+    background: #003329;
+    color: white;
+}
